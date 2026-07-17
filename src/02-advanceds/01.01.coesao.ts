@@ -1,8 +1,6 @@
-import { generateId, NanoID } from "../utils/identification";
-
 class Product {
   constructor(
-    public id: NanoID,
+    public id: string,
     public name: string,
     public price: number,
     public description: string,
@@ -11,7 +9,7 @@ class Product {
 
 class Sale {
   constructor(
-    public id: NanoID,
+    public id: string,
     public clientName: string,
     public clientEmail: string,
     public clientDocument: string,

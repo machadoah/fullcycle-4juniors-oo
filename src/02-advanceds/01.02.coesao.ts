@@ -1,7 +1,7 @@
-import { generateId, NanoID } from "../utils/identification";
+import { randomUUID } from "node:crypto";
 
 class Product {
-  id: NanoID = generateId();
+  id: string = randomUUID();
 
   constructor(
     public name: string,
@@ -25,7 +25,7 @@ class Address {
 }
 
 class Client {
-  id: NanoID = generateId();
+  id: string = randomUUID();
 
   constructor(
     public name: string,
@@ -36,13 +36,13 @@ class Client {
 }
 
 interface PaymentInterface {
-  id: NanoID;
+  id: string;
   amount: number;
   date: Date;
 }
 
 class PixPayment implements PaymentInterface {
-  id: NanoID = generateId();
+  id: string = randomUUID();
 
   constructor(
     public amount: number,
@@ -51,7 +51,7 @@ class PixPayment implements PaymentInterface {
 }
 
 class Sale {
-  id: NanoID = generateId();
+  id: string = randomUUID();
 
   constructor(
     public client: Client,
